@@ -14,7 +14,10 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # nmtui FTW
-  network.networkmanager.enable = true;
+  networking.networkmanager.enable = true;
+
+  # Add NTFS support (for encrypted ssd)
+  boot.supportedFilesystems = [ "ntfs" ];
 
   # Set your time zone.
   time = {
@@ -70,6 +73,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.coco = {
     isNormalUser = true;
+    createHome = true;
     extraGroups = [ "wheel" "networkmanager" "video" ]; # Enable ‘sudo’ for the user.
   };
 
@@ -86,6 +90,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    # Nix
+    home-manager
     # WM
     polybar
     redshift
@@ -151,4 +157,10 @@
 
   # QT5 theme
   environment.variables.QT_QPA_PLATFORMTHEME = "kde";
+  
+  # Fonts
+  fonts.fonts = with pkgs; [
+    meslo-lgs-nf # p10k
+    font-awesome
+  ];
 }
