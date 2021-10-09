@@ -95,6 +95,7 @@
     # WM
     polybar
     redshift
+    geoclue2
     picom
     autorandr
     # Editor
