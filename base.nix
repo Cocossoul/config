@@ -77,6 +77,9 @@
   # Allow not free packages (ex: not open source, google-chrome)
   nixpkgs.config.allowUnfree = true;
 
+  # Periodic upgrades
+  system.autoUpgrade.enable = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
