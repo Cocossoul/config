@@ -111,8 +111,7 @@
     firefox
     google-chrome
     thunderbird
-    dolphin
-    ark
+    gnome.nautilus
     gimp
     # Media
     vlc
@@ -143,4 +142,7 @@
 
   # Vim as default
   environment.variables.EDITOR = "vim";
+
+  # QT5 theme
+  environment.variables.QT_QPA_PLATFORMTHEME = "kde";
 }
