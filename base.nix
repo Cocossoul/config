@@ -140,4 +140,7 @@
 
   # Adjust screen brightness using light
   programs.light.enable = true;
+
+  # Vim as default
+  environment.variables.EDITOR = "vim";
 }
