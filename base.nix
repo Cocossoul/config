@@ -153,6 +153,16 @@
   # Adjust screen brightness using light
   programs.light.enable = true;
 
+  # Redshift
+  services.redshift = {
+    enable = true;
+    provider = "manual";
+  };
+  location = {
+    latitude = 48.0;
+    longitude = 2.3;
+  };
+
   # Vim as default
   environment.variables.EDITOR = "vim";
 
