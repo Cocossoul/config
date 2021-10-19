@@ -70,6 +70,11 @@
     };
   };
 
+  # Enable fingerprint to auth sudo and session
+  services.fprintd.enable = true;
+  security.pam.services.login.fprintAuth = true;
+  security.pam.services.sudo.fprintAuth = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.coco = {
     isNormalUser = true;
