@@ -5,6 +5,7 @@
     [
       # Per program config
       ./i3.nix
+      ./ssd.nix
       # ./picom.nix
       # ./polybar.nix
       # ./redshift.nix
@@ -166,6 +167,13 @@
   location = {
     latitude = 48.0;
     longitude = 2.3;
+  };
+
+  # Enable picom
+  services.picom = {
+    enable = true;
+    backend = "glx";
+    vSync = true;
   };
 
   # Vim as default
