@@ -6,6 +6,7 @@
       # Per program config
       ./i3.nix
       ./ssd.nix
+      ./lenovoyoga.nix
       # ./picom.nix
       # ./polybar.nix
       # ./redshift.nix
