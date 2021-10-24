@@ -22,8 +22,8 @@
 
   # Set your time zone.
   time = {
-     timeZone = "Europe/Paris";
-     hardwareClockInLocalTime = true;
+    timeZone = "Europe/Paris";
+    hardwareClockInLocalTime = true;
   };
 
   # Configure network proxy if necessary
@@ -33,9 +33,9 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
   console = {
-     font = "Lat2-Terminus16";
-     keyMap = "fr";
-   };
+    font = "Lat2-Terminus16";
+    keyMap = "fr";
+  };
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -46,7 +46,7 @@
     lightdm.enable = true;
     defaultSession = "none+i3";
   };
-  
+
 
   # Configure keymap in X11
   services.xserver.layout = "fr";
@@ -71,11 +71,6 @@
     };
   };
 
-  # Enable fingerprint to auth sudo and session
-  services.fprintd.enable = true;
-  security.pam.services.login.fprintAuth = true;
-  security.pam.services.sudo.fprintAuth = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.coco = {
     isNormalUser = true;
@@ -86,8 +81,8 @@
   # Zsh as default shell
   programs.zsh.enable = true;
   users.extraUsers.coco.shell = pkgs.zsh;
-  
-  # Allow not free packages (ex: not open source, google-chrome)
+
+  # Allow not open source packages (ex: google-chrome)
   nixpkgs.config.allowUnfree = true;
 
   # Periodic upgrades
@@ -137,25 +132,6 @@
     qbittorrent
   ];
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
   # Adjust screen brightness using light
   programs.light.enable = true;
 
@@ -179,9 +155,6 @@
   # Vim as default
   environment.variables.EDITOR = "vim";
 
-  # QT5 theme
-  environment.variables.QT_QPA_PLATFORMTHEME = "kde";
-  
   # Fonts
   fonts.fonts = with pkgs; [
     meslo-lgs-nf # p10k
