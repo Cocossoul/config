@@ -7,7 +7,6 @@
       ./i3.nix
       ./ssd.nix
       ./lenovoyoga.nix
-      ./openvpn.nix
       # ./picom.nix
       # ./polybar.nix
       # ./redshift.nix
@@ -146,6 +145,7 @@
     paprefs
     vlc
     qbittorrent
+    openvpn
   ];
 
   # Adjust screen brightness using light
