@@ -22,6 +22,9 @@
     experimental-features = nix-command flakes
   '';
 
+  # Bluetooth
+  hardware.bluetooth.enable = true;
+
   # nmtui FTW
   networking.networkmanager.enable = true;
 
@@ -66,6 +69,9 @@
   # Enable sound.
   sound.enable = true;
   hardware.pulseaudio.enable = true;
+
+  # dconf for paprefs
+  programs.dconf.enable = true;
 
   # Intel power management
   powerManagement.powertop.enable = true;
@@ -136,6 +142,8 @@
     gnome.nautilus
     gimp
     # Media
+    pavucontrol
+    paprefs
     vlc
     qbittorrent
   ];
