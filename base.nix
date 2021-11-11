@@ -7,6 +7,7 @@
       ./i3.nix
       ./ssd.nix
       ./lenovoyoga.nix
+      ./openvpn.nix
       # ./picom.nix
       # ./polybar.nix
       # ./redshift.nix
