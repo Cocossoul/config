@@ -57,6 +57,9 @@
     defaultSession = "none+i3";
   };
 
+  # Docker
+  virtualisation.docker.enable = true;
+
 
   # Configure keymap in X11
   services.xserver.layout = "fr";
@@ -88,7 +91,12 @@
   users.users.coco = {
     isNormalUser = true;
     createHome = true;
-    extraGroups = [ "wheel" "networkmanager" "video" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "video"
+      "docker"
+    ]; # Enable ‘sudo’ for the user.
   };
 
   # Zsh as default shell
