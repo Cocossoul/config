@@ -155,6 +155,8 @@
     qbittorrent
     openvpn
   ];
+  # Steam
+  programs.steam.enable = true;
 
   # Adjust screen brightness using light
   programs.light.enable = true;
