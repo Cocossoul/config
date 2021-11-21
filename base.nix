@@ -3,14 +3,8 @@
 {
   imports =
     [
-      # Per program config
-      ./i3.nix
-      ./ssd.nix
+      # Used config
       ./lenovoyoga.nix
-      # ./picom.nix
-      # ./polybar.nix
-      # ./redshift.nix
-      # ./alacritty.nix
     ];
   # networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -74,9 +68,6 @@
 
   # dconf for paprefs
   programs.dconf.enable = true;
-
-  # Intel power management
-  powerManagement.powertop.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput = {
@@ -186,4 +177,21 @@
     meslo-lgs-nf # p10k
     font-awesome
   ];
+
+  services.xserver =
+    {
+      desktopManager.xterm.enable = false;
+
+      windowManager.i3 = {
+        enable = true;
+        package = pkgs.i3-gaps;
+        extraPackages = with pkgs; [
+          dmenu
+          i3lock
+          feh
+        ];
+      };
+    };
+
+    environment.sessionVariables.TERMINAL = [ "alacritty" ];
 }

@@ -1,9 +1,16 @@
 { config, pkgs, ... }:
 
 {
+  imports =
+    [
+      # Features
+      ./ssd.nix
+      ./battery.nix
+    ];
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
 
   # Autologin because disk is encrypted anyway
   services.xserver.displayManager.autoLogin = {
@@ -25,5 +32,6 @@
   # replicates the default behaviour.
   networking.useDHCP = false;
   networking.interfaces.wlp107s0.useDHCP = true;
+  services.thermald.enable = true;
 }
 
