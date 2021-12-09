@@ -6,6 +6,8 @@
       # Features
       ./ssd.nix
       ./battery.nix
+      ./base.nix
+      ./remote_builder.nix
     ];
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
