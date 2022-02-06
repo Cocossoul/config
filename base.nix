@@ -15,6 +15,7 @@
 
   # nmtui FTW
   networking.networkmanager.enable = true;
+  programs.nm-applet.enable = true;
 
   # Add NTFS support (for encrypted ssd)
   boot.supportedFilesystems = [ "ntfs" ];
@@ -70,6 +71,7 @@
     touchpad = {
       naturalScrolling = true;
       tapping = true;
+      tappingDragLock = false;
     };
   };
 
@@ -94,6 +96,7 @@
 
   # Periodic upgrades
   system.autoUpgrade.enable = true;
+  programs.java.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -123,6 +126,8 @@
     gnumake
     neofetch
     light
+    maim
+    xclip
     # Terminal
     alacritty
     zsh
@@ -140,6 +145,8 @@
     vlc
     qbittorrent
     openvpn
+    # Latex
+    texlive.combined.scheme-medium
   ];
 
   # Adjust screen brightness using light
